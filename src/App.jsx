@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import Navbarcomponent from "./Components/navbar";
-import Fullnote from "./Components/Fullnote";
 import Loder from "./Components/Loder";
 function App() {
   return (
@@ -15,12 +14,13 @@ function App() {
         <Navbarcomponent/>
         <div className="p-10">
           <Routes>
-          <Route path="/" element={<Home />} />
+          {localStorage.getItem("token") && <Route path="/frontend/" element={<Home />} />}
+          {!localStorage.getItem("token") && <Route path="/frontend/" element={<Login />} />}
             <Route path="/About" element={<About />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/signup" element={<Signup/>} />
-            <Route path="/loader" element={<Loder/>}/>
+            <Route path="/frontend/home" element={<Home />} />
+            <Route path="/frontend/login" element={<Login/>} />
+            <Route path="/frontend/signup" element={<Signup/>} />
+            <Route path="/frontend/loader" element={<Loder/>}/>
             
           </Routes>
         </div>

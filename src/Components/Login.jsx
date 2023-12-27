@@ -42,7 +42,7 @@ function Login() {
       </form>
       <div className="signup">
         <span className="signup">Don't have an account?
-         <Link to={"/Signup"}><div>Signup</div></Link>
+         <Link to={"/frontend/Signup"}><div>Signup</div></Link>
         </span>
       </div>
     </div>

@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import noteContext from '../Context/notecontext'
 import "./notebookpage.css"
 import"./button.css"
+import Loder from "./Loder"
 import { useContext } from 'react'
 const Addnote = () => {
     const [enote, setnote] = useState({ title: "", description: "", tag: "" })
     const context = useContext(noteContext);
-    const { addnote,setnotes, notes } = context;
+    const { addnote,setnotes, notes ,loder } = context;
     const [newclass,setnewclass]=useState(false)
     const handelclick = async(e) => {
         e.preventDefault()
@@ -18,7 +19,9 @@ const Addnote = () => {
     }
 
     return (
+   
             <>
+                { loder && <Loder></Loder>}
       <button onClick={() => setnewclass(true)} className="button-92" type="submit">+</button>
             <div id="modal" className={`${newclass ? "modalcontainer" : "newheight"}`} >
                 <div className="modalcontainer overflow-hidden">
