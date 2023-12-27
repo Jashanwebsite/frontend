@@ -6,7 +6,7 @@ import noteContext from '../Context/notecontext';
 import { Link, useNavigate } from "react-router-dom";
 function Login() {
   const context = useContext(noteContext)
-  const {loder} = context;
+  const {loder,setloder} = context;
     let navigate = useNavigate("")
     const host = "https://backen-inotebook.onrender.com"
    const[credential,setcredentials] =  useState({email:"",password:""})
