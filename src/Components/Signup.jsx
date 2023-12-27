@@ -1,14 +1,20 @@
 import React from 'react'
+import { useContext } from 'react';
+import noteContext from '../Context/notecontext';
 import { useState } from 'react';
 // import "./signup.css"
 import "./login-signup.css"
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
+import Loder from './Loder';
 function Signup() {
+   const context = useContext(noteContext);
+   const {loder , setloder}= context;
     let navigate = useNavigate("")
     const host = "https://backen-inotebook.onrender.com"
    const[credential,setcredentials] =  useState({email:"",password:"",name:""})
     const handelclick = async(e) => {
+      setloder(true)
         e.preventDefault();
         const response = await fetch(`${host}/auth/createuser`, {
             method: "POST",
@@ -23,12 +29,13 @@ function Signup() {
             navigate("/login")
           }else{
             console.log(json)
-          }
+          }setloder(false)
       }
       const onchange = (e) => {
         setcredentials({ ...credential, [e.target.name]: e.target.value })
       }
-  return (
+  return (<>
+         {loder && <Loder></Loder>}
     <div className="registration signcontainer form">
       <header>Signup</header>
       <form action="#">
@@ -40,7 +47,7 @@ function Signup() {
       <div className="signup">
         <span className="signup">already have an account? <Link className='loginbutton text-slate-900' to={"/login"}>login</Link>
         </span>
-      </div></div>
+      </div></div></>
     )
 
 }

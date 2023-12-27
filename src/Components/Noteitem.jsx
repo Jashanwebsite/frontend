@@ -6,14 +6,14 @@ import "./noteitem.css"
 const Noteitem = (props) => {
   const context = useContext(noteContext);
   let { Deletenote, fullnotes,newclass,setnewclass} = context
-   const { note1, updatenote } = props;
+   const { note1, updatenote,key } = props;
    const handel=()=>{
     setnewclass(true)
     console.log(newclass)
   }
   return (
-    <div  onClick={()=>{updatenote(note1)}}>
-      <div  className=" card">
+    <div  key={key}  >
+      <div onClick={()=>{updatenote(note1)}}  className=" card">
         <div className="content">
           <div className="back">
             <div className="back-content">
@@ -39,7 +39,7 @@ const Noteitem = (props) => {
                     <strong>{ newclass?note1.description : note1.description.slice(0,5)}..</strong>
                   </p>  
                    <i onClick={handel} className=" fa-solid fa-pen-to-square hover:opacity-70 ml-9 " ></i>  
-                  <i onClick={() => { Deletenote(note1._id) }} className="fa-solid fa-trash-can select-non hover:opacity-50" ></i>
+                  <i  onClick={() => { Deletenote(note1._id) }}  className="fa-solid fa-trash-can select-non hover:opacity-50" ></i>
                        
                 </div>
                 <p className="card-footer">

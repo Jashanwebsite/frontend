@@ -66,10 +66,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: seagreen;
+  background: linear-gradient(red,rgb(117, 35, 138));
   transform-origin: top left;
   transform: rotate(-55deg);
-  filter: blur(30px) drop-shadow(20px 20px 20px seagreen);
+  filter: blur(30px) drop-shadow(20px 20px 20px rgb(240, 0, 140));
 }
 
 @keyframes radar81 {

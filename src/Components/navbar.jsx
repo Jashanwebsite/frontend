@@ -16,7 +16,7 @@ function Navbarcomponent() {
         var nav = document.getElementById("nav");
         bars.classList.toggle('active');
         nav.classList.toggle('visible');
-        console.log(bars.classList)
+        // console.log(bars.classList)
     }
     let location = useLocation();
     useEffect(() => {
