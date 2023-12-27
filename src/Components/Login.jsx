@@ -1,13 +1,18 @@
 import React from 'react'
 import { useState } from 'react';
 import "./login-signup.css"
+import { useContext } from 'react'
+import noteContext from '../Context/notecontext';
 import { Link, useNavigate } from "react-router-dom";
 function Login() {
+  const context = useContext(noteContext)
+  const {loder} = context;
     let navigate = useNavigate("")
     const host = "https://backen-inotebook.onrender.com"
    const[credential,setcredentials] =  useState({email:"",password:""})
     const handelclick = async(e) => {
         e.preventDefault();
+        setloder(true)
         const response = await fetch(`${host}/auth/login`, {
             method: "POST",
             headers: {
@@ -17,6 +22,7 @@ function Login() {
             body: JSON.stringify({"email":credential.email,"password":credential.password}),
           });
           const json = await response.json()
+          setloder(false)
           if (json.success){
             localStorage.setItem("token", json.authtoken)
             navigate("/home")

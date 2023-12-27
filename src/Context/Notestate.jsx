@@ -86,7 +86,7 @@ const Notestate = (props) => {
 
   }
   return (
-    <noteContext.Provider value={{notes, loder,setnotes, addnote, editnote, Deletenote, getnote,newclass,setnewclass }}>
+    <noteContext.Provider value={{notes, setloder,loder,setnotes, addnote, editnote, Deletenote, getnote,newclass,setnewclass }}>
       {props.children}
     </noteContext.Provider>
   )
