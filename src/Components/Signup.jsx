@@ -38,7 +38,7 @@ function Signup() {
         <input type="button" onClick={handelclick} className="button" value="Signup"/>
       </form>
       <div className="signup">
-        <span className="signup">already have an account? <Link className='loginbutton text-slate-900' to={"/frontend/login"}>login</Link>
+        <span className="signup">already have an account? <Link className='loginbutton text-slate-900' to={"/login"}>login</Link>
         </span>
       </div></div>
     )
