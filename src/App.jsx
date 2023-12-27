@@ -7,6 +7,7 @@ import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import Navbarcomponent from "./Components/navbar";
 import Fullnote from "./Components/Fullnote";
+import Loder from "./Components/Loder";
 function App() {
   return (
     <Notestate>
@@ -19,6 +20,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<Signup/>} />
+            <Route path="/loader" element={<Loder/>}/>
             
           </Routes>
         </div>

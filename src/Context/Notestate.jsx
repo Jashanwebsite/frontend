@@ -1,9 +1,11 @@
 import React, { useState , } from "react";
 import noteContext from "./notecontext";
+import { rule } from "postcss";
 
 // import Addnote from "../Components/Addnote";
 
 const Notestate = (props) => {
+  const [loder,setloder] = useState(false)
   const [newclass,setnewclass] = useState(false)
   const host = "https://backen-inotebook.onrender.com"
   const noteinitial = [
@@ -12,6 +14,7 @@ const Notestate = (props) => {
   // const [newFullnotes,setFullnotes]=useState({title:"",tag:"",description:""})
   // get all notes
   const getnote = async () => {
+    setloder(true)
     const response = await fetch(`${host}/notes/fetchnote`, {
       method: "POST",
       headers: {
@@ -21,10 +24,11 @@ const Notestate = (props) => {
     });
     const json = await response.json()
     setnotes(json)
+    setloder(false)
   }
   // console.log()
   const addnote = async (title, description, tag) => {
-
+     setloder(true)
     const response = await fetch(`${host}/notes/addnotes`, {
       method: 'POST',
       headers: {
@@ -35,9 +39,11 @@ const Notestate = (props) => {
     });
     const note = await response.json();
     setnotes(notes.concat(note))
+    setloder(false)
   }
   // delete call
   const Deletenote = async (id) => {
+    setloder(true)
     const response = await fetch(`${host}/notes/delete/${id}`, {
       method: "DELETE",
       headers: {
@@ -49,9 +55,11 @@ const Notestate = (props) => {
     // console.log(json)
     let updatenote = notes.filter((note) => { return note._id !== id })
     setnotes(updatenote)
+    setloder(false)
   }
   // edit a note
   const editnote = async (enote) => {
+    setloder(true)
     // console.log(enote)
       const response = await fetch(`${host}/notes/update/${enote.id}`, {
         method: "PUT",
@@ -74,10 +82,11 @@ const Notestate = (props) => {
           
         }
     }setnotes(newnote)
+    setloder(false)
 
   }
   return (
-    <noteContext.Provider value={{notes, setnotes, addnote, editnote, Deletenote, getnote,newclass,setnewclass }}>
+    <noteContext.Provider value={{notes, loder,setnotes, addnote, editnote, Deletenote, getnote,newclass,setnewclass }}>
       {props.children}
     </noteContext.Provider>
   )
