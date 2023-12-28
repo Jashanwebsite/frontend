@@ -28,7 +28,7 @@ function Login() {
     if (json.authtoken) {
       localStorage.setItem("token", json.authtoken)
       setloder(false)
-      navigate("/home")
+      navigate("frontend/home")
      
     } else {
       setloder(false)
