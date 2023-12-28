@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "./login-signup.css"
 import Loder from "./Loder"
 import { useContext } from 'react'
-import noteContext from '../Context/notecontext';
+import noteContext from "../Context/Notecontext";
 import { Link, useNavigate } from "react-router-dom";
 function Login() {
   const context = useContext(noteContext)
