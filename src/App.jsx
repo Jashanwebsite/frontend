@@ -14,13 +14,13 @@ function App() {
         <Navbarcomponent/>
         <div className="p-10">
           <Routes>
-          {localStorage.getItem("token") && <Route path="frontend/" element={<Home />} />}
-          {!localStorage.getItem("token") && <Route path="frontend/" element={<Login />} />}
-            <Route path="frontend/About" element={<About />} />
-            <Route path="frontend/home" element={<Home />} />
-            <Route path="frontend/login" element={<Login/>} />
-            <Route path="frontend/signup" element={<Signup/>} />
-            <Route path="frontend/loader" element={<Loder/>}/>
+          {localStorage.getItem("token") && <Route path="/frontend/" element={<Home />} />}
+          {!localStorage.getItem("token") && <Route path="/frontend/" element={<Login />} />}
+            <Route path="/frontend/About" element={<About />} />
+            <Route path="/frontend/home" element={<Home />} />
+            <Route path="/frontend/login" element={<Login/>} />
+            <Route path="/frontend/signup" element={<Signup/>} />
+            <Route path="/frontend/loader" element={<Loder/>}/>
             
           </Routes>
         </div>

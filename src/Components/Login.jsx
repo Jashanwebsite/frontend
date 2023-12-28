@@ -28,7 +28,7 @@ function Login() {
     if (json.authtoken) {
       localStorage.setItem("token", json.authtoken)
       setloder(false)
-      navigate("frontend/home")
+      navigate("/frontend/home")
      
     } else {
       setloder(false)
@@ -54,7 +54,7 @@ function Login() {
         </form>
         <div className="signup">
           <span className="signup">Don't have an account?
-            <Link to={"fronetnd/Signup"}><div>Signup</div></Link>
+            <Link to={"/fronetnd/Signup"}><div>Signup</div></Link>
           </span>
         </div>
       </div>
