@@ -9,8 +9,8 @@ function Navbarcomponent() {
     if (dark) {
         document.body.classList = "dark"
     }
-    const remove =  async() => {
-       await localStorage.removeItem("token")
+    const remove =() => {
+        localStorage.removeItem("token")
         navigate("frontend/login")
         var bars = document.getElementById("nav-action");
         var nav = document.getElementById("nav");
