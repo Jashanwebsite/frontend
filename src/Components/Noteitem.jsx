@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from 'react'
+import { useContext , useState,useEffect} from 'react'
 import noteContext from "../Context/Notecontext";
 import "./noteitem.css"
 // import Fullnote from "./Fullnote";
@@ -9,7 +9,8 @@ const Noteitem = (props) => {
    const { note1, updatenote,key } = props;
    const handel=()=>{
     setnewclass(true)
-    console.log(newclass)
+    // console.log()
+    // console.log(newclass)
   }
   return (
     <div  key={key}  >
@@ -43,7 +44,7 @@ const Noteitem = (props) => {
                        
                 </div>
                 <p className="card-footer">
-                  30 Mins &nbsp; | &nbsp; 1 Serving
+                {note1.date.slice(0,10)} &nbsp; | &nbsp; 
                 </p>
               </div>
             </div>

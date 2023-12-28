@@ -4,7 +4,7 @@ import "./Loder.css"
 function Loder() {
     const context = useContext(noteContext)
     const {loder} = context;
-    console.log(loder)
+    // console.log(loder)
   return (
     <>
     <div className='lodercontainer'>
