@@ -1,5 +1,5 @@
 import React, { useState , } from "react";
-import noteContext from "./notecontext";
+import noteContext from "./Notecontext";
 import { rule } from "postcss";
 
 // import Addnote from "../Components/Addnote";
