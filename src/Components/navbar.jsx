@@ -11,7 +11,7 @@ function Navbarcomponent() {
     }
     const remove =() => {
         localStorage.removeItem("token")
-        navigate("frontend/login")
+        navigate("/login")
         barClicked();
 
     }
