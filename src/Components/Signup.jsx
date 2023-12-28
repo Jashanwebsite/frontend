@@ -24,9 +24,8 @@ function Signup() {
             body: JSON.stringify({"email":credential.email,"name":credential.name,"password":credential.password}),
           });
           const json = await response.json()
-          // console.log(json)
-          if (json.success){
-            navigate("/login")
+          if (json.authtoken){
+            navigate("frontend/login")
           }else{
             console.log(json)
           }setloder(false)
@@ -45,7 +44,7 @@ function Signup() {
         <input type="button" onClick={handelclick} className="button" value="Signup"/>
       </form>
       <div className="signup">
-        <span className="signup">already have an account? <Link className='loginbutton text-slate-900' to={"/login"}>login</Link>
+        <span className="signup">already have an account? <Link className='loginbutton text-slate-900' to={"frontend/login"}>login</Link>
         </span>
       </div></div></>
     )
