@@ -10,7 +10,7 @@ const Noteitem = (props) => {
    const handel=()=>{
     setnewclass(true)
     // console.log()
-    // console.log(newclass)
+    console.log(newclass)
   }
   return (
     <div  key={key}  >
