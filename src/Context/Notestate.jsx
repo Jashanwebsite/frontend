@@ -2,7 +2,7 @@ import React, { useState , } from "react";
 import noteContext from "./Notecontext";
 import { rule } from "postcss";
 
-// import Addnote from "../Components/Addnote";
+
 
 const Notestate = (props) => {
   const [loder,setloder] = useState(false)

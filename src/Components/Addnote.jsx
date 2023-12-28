@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import noteContext from '../Context/notecontext'
+import noteContext from '../Context/Notecontext'
 import "./notebookpage.css"
 import"./button.css"
 import Loder from "./Loder"

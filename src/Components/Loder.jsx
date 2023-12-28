@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import noteContext from "../Context/notecontext";
+import noteContext from "../Context/Notecontext";
 import "./Loder.css"
 function Loder() {
     const context = useContext(noteContext)

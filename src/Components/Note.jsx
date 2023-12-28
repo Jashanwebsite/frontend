@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import Noteitem from "./Noteitem";
 import Addnote from "./Addnote";
-import noteContext from "../Context/notecontext";
+import noteContext from "../Context/Notecontext";
 import "./notebookpage.css"
 const Note = () => {
   const [enote, setnote] = useState({ id: "", etitle: "", edescription: "", etag: "" })
