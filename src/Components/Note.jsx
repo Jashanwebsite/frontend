@@ -44,7 +44,7 @@ const Note = () => {
       </div>
     </div> 
        </div>
-    <div className="grid lg:grid-cols-5  sm:grid-cols-3 grid-cols-2  gap-6">
+    <div className="grid lg:grid-cols-7  sm:grid-cols-3 grid-cols-2  gap-6">
       {notes.length === 0 && <div className="nonnote  ">no notes</div>}
       {notes.map && notes.map((note1) => {
         return (
