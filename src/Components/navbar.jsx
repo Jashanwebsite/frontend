@@ -38,7 +38,7 @@ function Navbarcomponent() {
             <nav id="nav">
                 <ul>
                 {!localStorage.getItem("token") && <li onClick={barClicked} class="shape-circle circle-one"><Link to="/frontend/Signup">signup</Link></li>}
-                    {localStorage.getItem("token") &&  <li onClick={remove} class="shape-circle circle-two">logout</li>}
+                    {localStorage.getItem("token") &&  <li onClick={remove} class="shape-circle circle-two"><a href="">logout</a></li>}
                     {!localStorage.getItem("token") &&   <li onClick={barClicked}  class="shape-circle circle-two"><Link to={"/frontend/login"}>login</Link></li>}
                     {localStorage.getItem("token") &&   <li onClick={barClicked}  class="shape-circle circle-two"><Link to={"/frontend/about"}>about</Link></li>}
                       <li onClick={barClicked} class="shape-circle circle-three"><Link to={"/frontend/home"}>home</Link></li>
